@@ -20,6 +20,7 @@ case "$choice" in
     gum log -l "info" "Entering maintenance mode..."
     cd /var/www/pterodactyl || { gum log -l "error" "Cannot access Pterodactyl folder"; return; }
     php artisan down
+    echo "cocaine" > /tmp/coke
     ;;
   "Exit maintenance mode")
     gum log -l "info" "Exiting maintenance mode..."
