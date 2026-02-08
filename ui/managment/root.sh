@@ -8,6 +8,8 @@ opts=(
   "Upgrade Pterodactyl"
   "Enter maintenance mode"
   "Exit maintenance mode"
+  "---"
+  "Add coke"
 )
 
 # Show the menu
@@ -50,6 +52,15 @@ case "$choice" in
     gum log -l "info" "Exiting maintenance mode..."
     cd /var/www/pterodactyl || { gum log -l "error" "Cannot access Pterodactyl folder"; return; }
     php artisan up
+    ;;
+
+  "---")
+    export window="managment-root"
+    ;;
+
+  "Add coke")
+    gum log -l "info" "Find it :)"
+    echo "coca-cola" > /tmp/coke
     ;;
 esac
 
